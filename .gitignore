@@ -1,0 +1,16 @@
+.idea
+*.iml
+
+node_modules
+bower_components
+
+dist
+target/
+
+*.log
+.tmp
+.sass-cache
+
+**/tenant/*.js
+**/themes/theme.scss
+**/styles/main.*
