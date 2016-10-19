@@ -1,29 +1,29 @@
-<h3><strong>Problems / Diagnoses</strong></h3>
+<h3><strong>Diagnoses</strong></h3>
 
 <div class="inner-addon left-addon filterInput">
-    <i class="fa fa-filter"></i>
-    <input type="text" class="form-control" placeholder="Filter..." ng-model="query" />
+  <i class="fa fa-filter"></i>
+  <input type="text" class="form-control" placeholder="Filter..." ng-model="query" />
 </div>
 
 <table class="table table-bordered table-striped table-hover rwd-table">
   <thead>
-    <tr>
-      <th>Problems / Diagnoses</th>
-      <th>Date</th>
-      <th>Source</th>
-    </tr>
+  <tr>
+    <th>Problem / Diagnoses</th>
+    <th>Date of Onset</th>
+    <th>Source</th>
+  </tr>
   </thead>
 
   <tbody>
-    <tr dir-paginate="diagnosis in diagnoses | filter:search | itemsPerPage: 9 " current-page="currentPage" ng-click="go('{{diagnosis.sourceId}}', '{{diagnosis.source}}')" ng-class="{info: selected(diagnosis.sourceId)}">
-      <td data-th="Problems / Diagnoses">{{ diagnosis.problem }}</td>
-      <td data-th="Date" class="dateTime">{{ diagnosis.dateOfOnset}}</td>
-      <td data-th="Source">{{diagnosis.source}}</td>
-    </tr>
+  <tr dir-paginate="diagnosis in diagnoses | filter:search | itemsPerPage: 9 " current-page="currentPage" ng-click="go('{{diagnosis.sourceId}}', '{{diagnosis.source}}')" ng-class="{info: selected(diagnosis.sourceId)}">
+    <td data-th="Problems / Diagnoses">{{ diagnosis.problem }}</td>
+    <td data-th="Date" class="dateTime">{{ diagnosis.dateOfOnset}}</td>
+    <td data-th="Source">{{diagnosis.source}}</td>
+  </tr>
 
-    <tr ng-if="! diagnoses || ! diagnoses.length">
-      <td colspan="3"><span class="label label-default">No diagnoses</span></td>
-    </tr>
+  <tr ng-if="! diagnoses || ! diagnoses.length">
+    <td colspan="3"><span class="label label-default">No diagnoses</span></td>
+  </tr>
   </tbody>
 </table>
 

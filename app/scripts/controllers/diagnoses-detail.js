@@ -27,7 +27,7 @@ angular.module('ripple-ui')
         resolve: {
           modal: function () {
             return {
-              title: 'Edit Problem / Diagnosis'
+              title: 'Edit Diagnosis'
             };
           },
           diagnosis: function () {
