@@ -53,13 +53,13 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="form-group" ng-class="{'has-error': (formSubmitted || contactForm.relationship.$dirty) && contactForm.relationship.$invalid, 'has-success': contactForm.relationship.$valid && contactForm.relationship.$dirty}">
+            <div class="form-group" ng-class="{'has-error': (formSubmitted || contactForm.relationshipType.$dirty) && contactForm.relationshipType.$invalid, 'has-success': contactForm.relationshipType.$valid && contactForm.relationshipType.$dirty}">
               <label for="relationship" class="control-label col-md-12">Relationship / Team</label>
               <div class="col-md-12">
                 <div class="input-group">
-                  <input type="text" class="form-control input-sm" id="relationship" name="relationship" ng-model="contact.relationship" required />
+                  <input type="text" class="form-control input-sm" id="relationship" name="relationship" ng-model="contact.relationshipType" required />
                 </div>
-                <span class="help-block animate-fade" ng-show="formSubmitted && contactForm.relationship.$error.required">You must enter a value.</span>
+                <span class="help-block animate-fade" ng-show="formSubmitted && contactForm.relationshipType.$error.required">You must enter a value.</span>
               </div>
             </div>
           </div>
@@ -69,13 +69,13 @@
       <div class="contactFormRow">
         <div class="row">
           <div class="col-md-6">
-            <div class="form-group" ng-class="{'has-error': (formSubmitted || contactForm.contactInformation.$dirty) && contactForm.contactInformation.$invalid, 'has-success': contactForm.contactInformation.$valid && contactForm.contactInformation.$dirty}">
-              <label for="contactInformation" class="control-label col-md-12">Address</label>
+            <div class="form-group" ng-class="{'has-error': (formSubmitted || contactForm.address.$dirty) && contactForm.address.$invalid, 'has-success': contactForm.address.$valid && contactForm.address.$dirty}">
+              <label for="address" class="control-label col-md-12">Address</label>
               <div class="col-md-12">
                 <div class="input-group">
-                  <textarea type="text" class="form-control input-sm" id="contactInformation" name="contactInformation" ng-model="contact.contactInformation" required></textarea>
+                  <textarea type="text" class="form-control input-sm" id="address" name="address" ng-model="contact.address" required></textarea>
                 </div>
-                <span class="help-block animate-fade" ng-show="formSubmitted && contactForm.contactInformation.$error.required">You must enter a value.</span>
+                <span class="help-block animate-fade" ng-show="formSubmitted && contactForm.address.$error.required">You must enter a value.</span>
               </div>
             </div>
           </div>
