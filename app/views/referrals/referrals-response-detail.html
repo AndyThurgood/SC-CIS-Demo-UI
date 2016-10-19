@@ -1,8 +1,15 @@
 <div class="transbox">
   <div class="innerTransbox">
-    <h3><strong>Referral</strong></h3>
+    <h3><strong>Referral Response</strong></h3>
 
     <div class="form-horizontal text-left">
+      <div class="form-group form-group-sm">
+        <label class="control-label col-md-3">Referral Ref:</label>
+        <div class="col-md-9">
+          <div class="form-control-static">{{ referral.reference }}</div>
+        </div>
+      </div>
+
       <div class="form-group form-group-sm">
         <label class="control-label col-md-3">Referral From:</label>
         <div class="col-md-9">
@@ -18,9 +25,30 @@
       </div>
 
       <div class="form-group form-group-sm">
-        <label class="control-label col-md-3">Date of Referral:</label>
+        <label class="control-label col-md-3">State:</label>
+        <div class="col-md-9">
+          <div class="form-control-static">{{ referral.state }}</div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-sm">
+        <label class="control-label col-md-3">Type:</label>
+        <div class="col-md-9">
+          <div class="form-control-static">{{ referral.type }}</div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-sm">
+        <label class="control-label col-md-3">Date Requested:</label>
         <div class="col-md-9">
           <div class="form-control-static">{{ referral.dateOfReferral | date:'dd-MMM-y'}}</div>
+        </div>
+      </div>
+
+      <div class="form-group form-group-sm">
+        <label class="control-label col-md-3">Date Responded:</label>
+        <div class="col-md-9">
+          <div class="form-control-static">{{ referral.dateOfResponse | date:'dd-MMM-y'}}</div>
         </div>
       </div>
 
@@ -38,9 +66,9 @@
       </div>
 
       <div class="form-group form-group-sm DetailsSubHeadingt">
-        <label class="control-label col-md-12">Clinical Summary:</label>
+        <label class="control-label col-md-12">Referral Outcome:</label>
         <div class="col-md-12">
-          <div class="form-control-static">{{ referral.clinicalSummary }}</div>
+          <div class="form-control-static">{{ referral.outcome }}</div>
         </div>
       </div>
 
@@ -67,6 +95,6 @@
     </div>
   </div>
 </div>
-<div class="form-group form-group-sm text-right" ng-if="currentUser.permissions.indexOf('WRITE') !== -1">
+<div class="form-group form-group-sm text-right">
   <button class="btn btn-info" ng-click="edit();"><i class="fa fa-pencil"></i> Edit</button>
 </div>

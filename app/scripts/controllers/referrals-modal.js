@@ -5,18 +5,24 @@ angular.module('ripple-ui')
 
     $('#dateofreferral').datepicker({ dateFormat: 'dd-MMM-y' });
 
-    UserService.findCurrentUser().then( function (result) {
-      $scope.currentUser = result.data;
-    });
-
+    $scope.currentUser = UserService.findCurrentUser();
     $scope.referral = referral;
     $scope.patient = patient;
     $scope.modal = modal;
 
-    if (modal.title === 'Create Referral') {
+    if (modal.title === 'Create Referral Request') {
       $scope.referral.dateCreated = new Date().toISOString().slice(0, 10);
       $scope.author = $scope.currentUser;
     }
+      else if(modal.title === 'Create Referral Response'){
+      $scope.referral.dateCreated = new Date().toISOString().slice(0, 10);
+      $scope.author = $scope.currentUser;
+    }
+    else if(modal.title === 'Edit Referral Response'){
+      $scope.referral.dateCreated = new Date($scope.referral.dateCreated).toISOString().slice(0, 10);
+      $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);
+      $scope.referral.dateOfResponse = new Date($scope.referral.dateOfResponse).toISOString().slice(0, 10);
+    }      
     else {
       $scope.referral.dateCreated = new Date($scope.referral.dateCreated).toISOString().slice(0, 10);
       $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);

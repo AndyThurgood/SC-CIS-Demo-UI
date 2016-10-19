@@ -44,16 +44,29 @@ angular.module('ripple-ui')
       usSpinnerService.stop('patientSummary-spinner');
     });
 
-    $scope.go = function (id) {
-      $state.go('referrals-detail', {
-        patientId: $scope.patient.id,
-        referralId: id,
-        filter: $scope.query,
-        page: $scope.currentPage,
-        reportType: $stateParams.reportType,
-        searchString: $stateParams.searchString,
-        queryType: $stateParams.queryType
-      });
+    $scope.go = function (id, state) {
+      if(state === 'Requested'){
+        $state.go('referrals-request-detail', {
+          patientId: $scope.patient.id,
+          referralId: id,
+          filter: $scope.query,
+          page: $scope.currentPage,
+          reportType: $stateParams.reportType,
+          searchString: $stateParams.searchString,
+          queryType: $stateParams.queryType
+        });
+      }
+      else if(state === 'Responded'){
+        $state.go('referrals-response-detail', {
+          patientId: $scope.patient.id,
+          referralId: id,
+          filter: $scope.query,
+          page: $scope.currentPage,
+          reportType: $stateParams.reportType,
+          searchString: $stateParams.searchString,
+          queryType: $stateParams.queryType
+        });
+      }
     };
 
     $scope.selected = function (referralId) {
@@ -62,13 +75,13 @@ angular.module('ripple-ui')
 
     $scope.create = function () {
       var modalInstance = $modal.open({
-        templateUrl: 'views/referrals/referrals-modal.html',
+        templateUrl: 'views/referrals/referrals-request-modal.html',
         size: 'lg',
         controller: 'ReferralsModalCtrl',
         resolve: {
           modal: function () {
             return {
-              title: 'Create Referral'
+              title: 'Create Referral Request'
             };
           },
           referral: function () {
