@@ -17,7 +17,6 @@ angular.module('ripple-ui')
       $scope.diagnosis.dateOfOnset = new Date($scope.diagnosis.dateOfOnset).toISOString().slice(0, 10);
     }else {
       $scope.diagnosis.dateSubmitted = new Date().toISOString().slice(0, 10);
-      $scope.diagnosis.code = '12393890';
     }
 
     $scope.changeProtocol = function (protocol) {
