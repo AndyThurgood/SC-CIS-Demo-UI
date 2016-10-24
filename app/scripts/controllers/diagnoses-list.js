@@ -64,7 +64,7 @@ angular.module('ripple-ui')
         resolve: {
           modal: function () {
             return {
-              title: 'Create Problem / Diagnosis'
+              title: 'Create Diagnosis'
             };
           },
           diagnosis: function () {
@@ -98,7 +98,7 @@ angular.module('ripple-ui')
               reportType: $stateParams.reportType,
               searchString: $stateParams.searchString,
               queryType: $stateParams.queryType
-               }, {
+            }, {
               reload: true
             });
           }, 2000);
