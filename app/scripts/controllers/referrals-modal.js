@@ -16,6 +16,8 @@ angular.module('ripple-ui')
     }
       else if(modal.title === 'Create Referral Response'){
       $scope.referral.dateCreated = new Date().toISOString().slice(0, 10);
+      $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);
+      $scope.referral.dateOfResponse = new Date().toISOString().slice(0, 10);
       $scope.author = $scope.currentUser;
     }
     else if(modal.title === 'Edit Referral Response'){

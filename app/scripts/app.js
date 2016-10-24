@@ -233,16 +233,6 @@ angular
         }
       })
 
-      .state('referrals-response-detail', {
-        url: '/patients/{patientId:int}/referrals/{referralId}?filter&page&reportType&searchString&queryType',
-        views: {
-          'user-context': { templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl' },
-          actions: { templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl' },
-          main: { templateUrl: 'views/referrals/referrals-list.html', controller: 'ReferralsListCtrl' },
-          detail: { templateUrl: 'views/referrals/referrals-response-detail.html', controller: 'ReferralsDetailCtrl' }
-        }
-      })
-
     .state('eolcareplans', {
         url: '/patients/{patientId:int}/eolcareplans?reportType&searchString&queryType',
         views: {

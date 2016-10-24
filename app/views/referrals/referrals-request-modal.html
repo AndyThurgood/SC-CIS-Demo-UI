@@ -96,14 +96,25 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 reasonforreferralGroup">
-          <div class="form-group" ng-class="{'has-error': (formSubmitted || referralForm.clinicalsummary.$dirty) && referralForm.reasonforreferral.$invalid, 'has-success': referralForm.clinicalsummary.$valid && referralForm.clinicalsummary.$dirty}">
+        <div ng-if="referral.referralState == 'planned'" class="col-md-6 reasonforreferralGroup">
+          <div class="form-group" ng-class="{'has-error': (formSubmitted || referralForm.clinicalsummary.$dirty) && referralForm.clinicalSummary.$invalid, 'has-success': referralForm.clinicalsummary.$valid && referralForm.clinicalsummary.$dirty}">
             <label for="clinicalsummary" class="control-label col-md-12">Summary</label>
             <div class="col-md-12">
               <div class="input-group">
                 <textarea class="form-control input-sm" id="clinicalsummary" name="clinicalsummary" ng-model="referral.clinicalSummary " required ></textarea>
               </div>
               <span class="help-block animate-fade" ng-show="formSubmitted && referralForm.clinicalsummary.$error.required">You must enter a value.</span>
+            </div>
+          </div>
+        </div>
+        <div ng-if="referral.referralState == 'completed'" class="col-md-6 reasonforreferralGroup">
+          <div class="form-group" ng-class="{'has-error': (formSubmitted || referralForm.outcome.$dirty) && referralForm.outcome.$invalid, 'has-success': referralForm.outcome.$valid && referralForm.outcome.$dirty}">
+            <label for="outcome" class="control-label col-md-12">Referral Outcome</label>
+            <div class="col-md-12">
+              <div class="input-group">
+                <textarea class="form-control input-sm" id="outcome" name="outcome" ng-model="referral.outcome " required ></textarea>
+              </div>
+              <span class="help-block animate-fade" ng-show="formSubmitted && referralForm.outcome.$error.required">You must enter a value.</span>
             </div>
           </div>
         </div>
