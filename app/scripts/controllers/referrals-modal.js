@@ -24,7 +24,7 @@ angular.module('ripple-ui')
       $scope.referral.dateCreated = new Date($scope.referral.dateCreated).toISOString().slice(0, 10);
       $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);
       $scope.referral.dateOfResponse = new Date($scope.referral.dateOfResponse).toISOString().slice(0, 10);
-    }      
+    }
     else {
       $scope.referral.dateCreated = new Date($scope.referral.dateCreated).toISOString().slice(0, 10);
       $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);

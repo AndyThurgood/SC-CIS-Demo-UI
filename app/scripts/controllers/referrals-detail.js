@@ -36,7 +36,8 @@ angular.module('ripple-ui')
         resolve: {
           modal: function () {
             return {
-              title: 'Create Referral Response'
+              title: 'Create Referral Response',
+              response: true
             };
           },
           referral: function () {
@@ -90,12 +91,14 @@ angular.module('ripple-ui')
           modal: function () {
             if($scope.referral.referralState == "completed"){
               return {
-                title: 'Edit Referral Response'
+                title: 'Edit Referral Response',
+                response: true
               };
             }
             else{
               return {
-                title: 'Edit Referral Request'
+                title: 'Edit Referral Request',
+                response: false
               };
             }
           },

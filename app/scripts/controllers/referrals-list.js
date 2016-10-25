@@ -68,7 +68,8 @@ angular.module('ripple-ui')
         resolve: {
           modal: function () {
             return {
-              title: 'Create Referral Request'
+              title: 'Create Referral Request',
+              response: false
             };
           },
           referral: function () {
