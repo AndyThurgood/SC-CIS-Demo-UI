@@ -91,8 +91,10 @@ angular.module('ripple-ui')
           dateCreated: new Date(referral.dateCreated),
           dateOfReferral: referral.dateOfReferral,
           reason: referral.reason,
+          referralType: referral.type,
           referralFrom: referral.referralFrom,
           referralTo: referral.referralTo,
+          referralState: 'planned',
           source: 'openehr'
         };
 

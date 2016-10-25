@@ -62,13 +62,12 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <div class="form-group" ng-class="{'has-error': (formSubmitted || referralForm.reference.$dirty) && referralForm.reference.$invalid, 'has-success': referralForm.reference.$valid && referralForm.reference.$dirty}">
+          <div class="form-group">
             <label for="reference" class="control-label col-md-12">Referral Ref</label>
             <div class="col-md-12">
               <div class="input-group">
-                <input type="text" class="form-control input-sm" id="reference" name="reference" ng-model="referral.reference" required />
+                <input type="text" class="form-control input-sm" id="reference" name="reference" ng-model="referral.reference" disabled/>
               </div>
-              <span class="help-block animate-fade" ng-show="formSubmitted && referralForm.reference.$error.required">You must enter a value.</span>
             </div>
           </div>
         </div>
