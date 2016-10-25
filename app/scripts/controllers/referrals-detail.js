@@ -10,22 +10,7 @@ angular.module('ripple-ui')
 
     Referral.get($stateParams.patientId, $stateParams.referralId).then(function (result) {
       $scope.referral = result.data;
-      /*$scope.referral = {
-        "sourceId":"8a634643-7232-45b7-a773-2375f92deb82::ripple_osi.ehrscape.c4h::1",
-        "source":"Marand",
-        "reference":"123-01923-09",
-        "dateOfReferral":1459987200000,
-        "dateOfResponse":1459987200000,
-        "referralFrom":"Dr Jamie Jones",
-        "referralType":"Cardiology",
-        "referralTo":"Dr Carl Cox",
-        "reason":"Prostate Cancer MDT",
-        "outcome":"sick",
-        "referralState":"completed",
-        "author":"c4h_ripple_osi",
-        "dateCreated":1460716241945
-      };*/
-      usSpinnerService.stop('referralsDetail-spinner');
+      usSpinnerService.stop('referralDetail-spinner');
     });
 
     $scope.respond = function () {
@@ -63,6 +48,7 @@ angular.module('ripple-ui')
           reference: referral.reference,
           referralFrom: referral.referralFrom,
           referralTo: referral.referralTo,
+          type: referral.type,
           referralState: 'completed',
           source: 'openehr'
         };
@@ -124,6 +110,7 @@ angular.module('ripple-ui')
           reason: referral.reason,
           referralFrom: referral.referralFrom,
           referralTo: referral.referralTo,
+          type: referral.type,
           source: 'openehr'
         };
 

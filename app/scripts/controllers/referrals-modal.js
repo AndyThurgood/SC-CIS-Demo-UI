@@ -18,16 +18,19 @@ angular.module('ripple-ui')
       $scope.referral.dateCreated = new Date().toISOString().slice(0, 10);
       $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);
       $scope.referral.dateOfResponse = new Date().toISOString().slice(0, 10);
+      $scope.referral.type = $scope.referral.referralType;
       $scope.author = $scope.currentUser;
     }
     else if(modal.title === 'Edit Referral Response'){
       $scope.referral.dateCreated = new Date($scope.referral.dateCreated).toISOString().slice(0, 10);
       $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);
       $scope.referral.dateOfResponse = new Date($scope.referral.dateOfResponse).toISOString().slice(0, 10);
+      $scope.referral.type = $scope.referral.referralType;
     }
     else {
       $scope.referral.dateCreated = new Date($scope.referral.dateCreated).toISOString().slice(0, 10);
       $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);
+      $scope.referral.type = $scope.referral.referralType;
     }
 
     $scope.referralCreatedDatepicker = function ($event, name) {
