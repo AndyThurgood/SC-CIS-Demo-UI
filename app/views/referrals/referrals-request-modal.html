@@ -133,6 +133,20 @@
             </div>
           </div>
         </div>
+        <div class="col-md-6 referralDate">
+          <div  ng-class="{'has-error': (formSubmitted || referralForm.dateresponded.$dirty) && referralForm.dateresponded.$invalid, 'has-success': referralForm.dateresponded.$valid && referralForm.dateresponded.$dirty}">
+            <label for="dateresponded" class="control-label col-md-12">Date Responded</label>
+            <div class="col-md-12">
+              <div class="input-group">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-sm" ng-click="daterespondedDatepicker($event, 'dateresponded')"><i class="fa fa-calendar"></i></button>
+            </span>
+                <input type="text" class="form-control popupinputs" ui-date id="dateresponded"  name="dateresponded" ng-model="referral.dateresponded " ng-click="daterespondedDatepicker($event, 'dateresponded')" datepicker-popup="dd-MMM-y" is-open="dateresponded" required />
+              </div>
+              <span class="help-block animate-fade" ng-show="formSubmitted && referralForm.dateresponded.$error.required">You must enter a valid date.</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-md-6">

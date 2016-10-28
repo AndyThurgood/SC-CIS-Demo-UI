@@ -41,14 +41,14 @@ angular.module('ripple-ui')
         var toCreate = {
           sourceId: '',
           author: referral.author,
-          outcome: referral.outcome,
+          referralOutcome: referral.outcome,
           dateCreated: new Date(referral.dateCreated),
           dateOfReferral: referral.dateOfReferral,
           reason: referral.reason,
           reference: referral.reference,
           referralFrom: referral.referralFrom,
           referralTo: referral.referralTo,
-          type: referral.type,
+          referralType: referral.type,
           referralState: 'completed',
           source: 'openehr'
         };
@@ -110,7 +110,8 @@ angular.module('ripple-ui')
           reason: referral.reason,
           referralFrom: referral.referralFrom,
           referralTo: referral.referralTo,
-          type: referral.type,
+          referralType: referral.type,
+          referralOutcome: referral.outcome,
           source: 'openehr'
         };
 
