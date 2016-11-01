@@ -4,6 +4,7 @@ angular.module('ripple-ui')
   .controller('ReferralsModalCtrl', function ($scope, $modalInstance, UserService, referral, patient, modal) {
 
     $('#dateofreferral').datepicker({ dateFormat: 'dd-MMM-y' });
+    $('#dateresponded').datepicker({ dateFormat: 'dd-MM-y'});
 
     $scope.currentUser = UserService.findCurrentUser();
     $scope.referral = referral;
@@ -17,14 +18,14 @@ angular.module('ripple-ui')
       else if(modal.title === 'Create Referral Response'){
       $scope.referral.dateCreated = new Date().toISOString().slice(0, 10);
       $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);
-      $scope.referral.dateresponded = new Date().toISOString().slice(0, 10);
+      $scope.referral.dateResponded = new Date().toISOString().slice(0, 10);
       $scope.referral.type = $scope.referral.referralType;
       $scope.author = $scope.currentUser;
     }
     else if(modal.title === 'Edit Referral Response'){
       $scope.referral.dateCreated = new Date($scope.referral.dateCreated).toISOString().slice(0, 10);
       $scope.referral.dateOfReferral = new Date($scope.referral.dateOfReferral).toISOString().slice(0, 10);
-      $scope.referral.dateresponded = new Date($scope.referral.dateresponded).toISOString().slice(0, 10);
+      $scope.referral.dateResponded = new Date($scope.referral.dateResponded).toISOString().slice(0, 10);
       $scope.referral.type = $scope.referral.referralType;
     }
     else {
@@ -41,6 +42,13 @@ angular.module('ripple-ui')
     };
 
     $scope.dateofReferralDatepicker = function ($event, name) {
+      $event.preventDefault();
+      $event.stopPropagation();
+
+      $scope[name] = true;
+    };
+
+    $scope.dateRespondedDatepicker = function ($event, name) {
       $event.preventDefault();
       $event.stopPropagation();
 

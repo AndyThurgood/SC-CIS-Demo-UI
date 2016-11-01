@@ -10,12 +10,12 @@ angular.module('ripple-ui')
 
     Referral.get($stateParams.patientId, $stateParams.referralId).then(function (result) {
       $scope.referral = result.data;
-      usSpinnerService.stop('referralDetail-spinner');
+      usSpinnerService.stop('contactDetail-spinner');
     });
 
     $scope.respond = function () {
       var modalInstance = $modal.open({
-        templateUrl: 'views/referrals/referrals-request-modal.html',
+        templateUrl: 'views/referrals/referrals-modal.html',
         size: 'lg',
         controller: 'ReferralsModalCtrl',
         resolve: {
@@ -41,9 +41,10 @@ angular.module('ripple-ui')
         var toCreate = {
           sourceId: '',
           author: referral.author,
-          referralOutcome: referral.outcome,
+          referralOutcome: referral.referralOutcome,
           dateCreated: new Date(referral.dateCreated),
           dateOfReferral: referral.dateOfReferral,
+          dateResponded: referral.dateResponded,
           reason: referral.reason,
           reference: referral.reference,
           referralFrom: referral.referralFrom,
@@ -70,7 +71,7 @@ angular.module('ripple-ui')
 
     $scope.edit = function () {
       var modalInstance = $modal.open({
-        templateUrl: 'views/referrals/referrals-request-modal.html',
+        templateUrl: 'views/referrals/referrals-modal.html',
         size: 'lg',
         controller: 'ReferralsModalCtrl',
         resolve: {
@@ -107,11 +108,12 @@ angular.module('ripple-ui')
           clinicalSummary: referral.clinicalSummary,
           dateCreated: new Date(referral.dateCreated),
           dateOfReferral: referral.dateOfReferral,
+          dateResponded: referral.dateResponded,
           reason: referral.reason,
           referralFrom: referral.referralFrom,
           referralTo: referral.referralTo,
           referralType: referral.type,
-          referralOutcome: referral.outcome,
+          referralOutcome: referral.referralOutcome,
           source: 'openehr'
         };
 

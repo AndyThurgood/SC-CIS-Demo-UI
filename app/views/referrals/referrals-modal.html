@@ -107,13 +107,13 @@
           </div>
         </div>
         <div ng-if="modal.response" class="col-md-6 reasonforreferralGroup">
-          <div class="form-group" ng-class="{'has-error': (formSubmitted || referralForm.outcome.$dirty) && referralForm.outcome.$invalid, 'has-success': referralForm.outcome.$valid && referralForm.outcome.$dirty}">
-            <label for="outcome" class="control-label col-md-12">Referral Outcome</label>
+          <div class="form-group" ng-class="{'has-error': (formSubmitted || referralForm.referralOutcome.$dirty) && referralForm.referralOutcome.$invalid, 'has-success': referralForm.referralOutcome.$valid && referralForm.referralOutcome.$dirty}">
+            <label for="referralOutcome" class="control-label col-md-12">Referral Outcome</label>
             <div class="col-md-12">
               <div class="input-group">
-                <textarea class="form-control input-sm" id="outcome" name="outcome" ng-model="referral.outcome " required ></textarea>
+                <textarea class="form-control input-sm" id="referralOutcome" name="referralOutcome" ng-model="referral.referralOutcome " required ></textarea>
               </div>
-              <span class="help-block animate-fade" ng-show="formSubmitted && referralForm.outcome.$error.required">You must enter a value.</span>
+              <span class="help-block animate-fade" ng-show="formSubmitted && referralForm.referralOutcome.$error.required">You must enter a value.</span>
             </div>
           </div>
         </div>
@@ -133,17 +133,17 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 referralDate">
-          <div  ng-class="{'has-error': (formSubmitted || referralForm.dateresponded.$dirty) && referralForm.dateresponded.$invalid, 'has-success': referralForm.dateresponded.$valid && referralForm.dateresponded.$dirty}">
-            <label for="dateresponded" class="control-label col-md-12">Date Responded</label>
+        <div ng-if="modal.response" class="col-md-6 referralDate">
+          <div  ng-class="{'has-error': (formSubmitted || referralForm.dateResponded.$dirty) && referralForm.dateResponded.$invalid, 'has-success': referralForm.dateResponded.$valid && referralForm.dateResponded.$dirty}">
+            <label for="dateResponded" class="control-label col-md-12">Date Responded</label>
             <div class="col-md-12">
               <div class="input-group">
             <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-sm" ng-click="daterespondedDatepicker($event, 'dateresponded')"><i class="fa fa-calendar"></i></button>
+              <button type="button" class="btn btn-default btn-sm" ng-click="dateRespondedDatepicker($event, 'dateResponded')"><i class="fa fa-calendar"></i></button>
             </span>
-                <input type="text" class="form-control popupinputs" ui-date id="dateresponded"  name="dateresponded" ng-model="referral.dateresponded " ng-click="daterespondedDatepicker($event, 'dateresponded')" datepicker-popup="dd-MMM-y" is-open="dateresponded" required />
+                <input type="text" class="form-control popupinputs" ui-date id="dateResponded"  name="dateResponded" ng-model="referral.dateResponded " ng-click="dateRespondedDatepicker($event, 'dateResponded')" datepicker-popup="dd-MMM-y" is-open="dateResponded" required />
               </div>
-              <span class="help-block animate-fade" ng-show="formSubmitted && referralForm.dateresponded.$error.required">You must enter a valid date.</span>
+              <span class="help-block animate-fade" ng-show="formSubmitted && referralForm.dateResponded.$error.required">You must enter a valid date.</span>
             </div>
           </div>
         </div>

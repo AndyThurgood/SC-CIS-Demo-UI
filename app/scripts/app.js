@@ -229,7 +229,7 @@ angular
           'user-context': { templateUrl: 'views/patients/patients-context.html', controller: 'PatientsDetailCtrl' },
           actions: { templateUrl: 'views/patients/patients-sidebar.html', controller: 'PatientsDetailCtrl' },
           main: { templateUrl: 'views/referrals/referrals-list.html', controller: 'ReferralsListCtrl' },
-          detail: { templateUrl: 'views/referrals/referrals-request-detail.html', controller: 'ReferralsDetailCtrl' }
+          detail: { templateUrl: 'views/referrals/referrals-detail.html', controller: 'ReferralsDetailCtrl' }
         }
       })
 

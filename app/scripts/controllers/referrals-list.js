@@ -62,7 +62,7 @@ angular.module('ripple-ui')
 
     $scope.create = function () {
       var modalInstance = $modal.open({
-        templateUrl: 'views/referrals/referrals-request-modal.html',
+        templateUrl: 'views/referrals/referrals-modal.html',
         size: 'lg',
         controller: 'ReferralsModalCtrl',
         resolve: {
