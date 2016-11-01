@@ -114,6 +114,8 @@ angular.module('ripple-ui')
           referralTo: referral.referralTo,
           referralType: referral.type,
           referralOutcome: referral.referralOutcome,
+          referralState: referral.referralState,
+          reference: referral.reference,
           source: 'openehr'
         };
 
