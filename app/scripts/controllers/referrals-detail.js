@@ -38,6 +38,9 @@ angular.module('ripple-ui')
         referral.dateOfReferral = new Date(referral.dateOfReferral);
         referral.dateOfReferral.setMinutes(referral.dateOfReferral.getMinutes() - referral.dateOfReferral.getTimezoneOffset());
 
+        referral.dateResponded = new Date(referral.dateResponded);
+        referral.dateResponded.setMinutes(referral.dateResponded.getMinutes() - referral.dateResponded.getTimezoneOffset());
+
         var toCreate = {
           sourceId: '',
           author: referral.author,
@@ -101,6 +104,9 @@ angular.module('ripple-ui')
       modalInstance.result.then(function (referral) {
         referral.dateOfReferral = new Date(referral.dateOfReferral);
         referral.dateOfReferral.setMinutes(referral.dateOfReferral.getMinutes() - referral.dateOfReferral.getTimezoneOffset());
+
+        referral.dateResponded = new Date(referral.dateResponded);
+        referral.dateResponded.setMinutes(referral.dateResponded.getMinutes() - referral.dateResponded.getTimezoneOffset());
 
         var toUpdate = {
           sourceId: referral.sourceId,
