@@ -8,7 +8,7 @@ angular.module('ripple-ui')
       $scope.patient = patient;
     });
 
-    Referral.get($stateParams.patientId, $stateParams.referralId).then(function (result) {
+    Referral.get($stateParams.patientId, $stateParams.referralId, $stateParams.source).then(function (result) {
       $scope.referral = result.data;
       usSpinnerService.stop('contactDetail-spinner');
     });

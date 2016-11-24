@@ -44,7 +44,7 @@ angular.module('ripple-ui')
       usSpinnerService.stop('patientSummary-spinner');
     });
 
-    $scope.go = function (id) {
+    $scope.go = function (id, referralSource) {
         $state.go('referrals-request-detail', {
           patientId: $scope.patient.id,
           referralId: id,
@@ -52,7 +52,8 @@ angular.module('ripple-ui')
           page: $scope.currentPage,
           reportType: $stateParams.reportType,
           searchString: $stateParams.searchString,
-          queryType: $stateParams.queryType
+          queryType: $stateParams.queryType,
+          source: referralSource
         });
     };
 
