@@ -29,7 +29,7 @@ angular.module('ripple-ui')
       usSpinnerService.stop('patientSummary-spinner');
     });
 
-    $scope.go = function (id) {
+    $scope.go = function (id, contactSource) {
       $state.go('contacts-detail', {
         patientId: $scope.patient.id,
         contactIndex: id,
@@ -37,7 +37,8 @@ angular.module('ripple-ui')
         page: $scope.currentPage,
         reportType: $stateParams.reportType,
         searchString: $stateParams.searchString,
-        queryType: $stateParams.queryType
+        queryType: $stateParams.queryType,
+        source: contactSource
       });
     };
 
