@@ -3,8 +3,8 @@
 angular.module('ripple-ui')
   .factory('Contact', function ($http) {
 
-    var get = function (patientId, compositionId) {
-      return $http.get('/api/patients/' + patientId + '/contacts/' + compositionId);
+    var get = function (patientId, compositionId, source) {
+      return $http.get('/api/patients/' + patientId + '/contacts/' + compositionId + '?source=' + source);
     };
 
     var all = function (patientId) {

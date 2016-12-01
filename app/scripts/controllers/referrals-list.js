@@ -44,16 +44,17 @@ angular.module('ripple-ui')
       usSpinnerService.stop('patientSummary-spinner');
     });
 
-    $scope.go = function (id) {
-      $state.go('referrals-detail', {
-        patientId: $scope.patient.id,
-        referralId: id,
-        filter: $scope.query,
-        page: $scope.currentPage,
-        reportType: $stateParams.reportType,
-        searchString: $stateParams.searchString,
-        queryType: $stateParams.queryType
-      });
+    $scope.go = function (id, referralSource) {
+        $state.go('referrals-request-detail', {
+          patientId: $scope.patient.id,
+          referralId: id,
+          filter: $scope.query,
+          page: $scope.currentPage,
+          reportType: $stateParams.reportType,
+          searchString: $stateParams.searchString,
+          queryType: $stateParams.queryType,
+          source: referralSource
+        });
     };
 
     $scope.selected = function (referralId) {
@@ -68,7 +69,8 @@ angular.module('ripple-ui')
         resolve: {
           modal: function () {
             return {
-              title: 'Create Referral'
+              title: 'Create Referral Request',
+              response: false
             };
           },
           referral: function () {
@@ -91,8 +93,10 @@ angular.module('ripple-ui')
           dateCreated: new Date(referral.dateCreated),
           dateOfReferral: referral.dateOfReferral,
           reason: referral.reason,
+          referralType: referral.type,
           referralFrom: referral.referralFrom,
           referralTo: referral.referralTo,
+          referralState: 'planned',
           source: 'openehr'
         };
 

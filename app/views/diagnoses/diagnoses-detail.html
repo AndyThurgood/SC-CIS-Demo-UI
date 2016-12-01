@@ -1,6 +1,6 @@
 <div class="transbox">
   <div class="innerTransbox">
-    <h3><strong>Problem and Diagnosis</strong></h3>
+    <h3><strong>Problem / Diagnosis</strong></h3>
 
     <div class="form-horizontal text-left">
 
@@ -87,6 +87,6 @@
     </div>
   </div>
 </div>
-<div ng-if="diagnosis.source !== 'vista'" class="form-group form-group-sm text-right" ng-if="currentUser.permissions.indexOf('WRITE') !== -1">
+<div ng-if="diagnosis.source !== 'vista' && diagnosis.source !== 'SC-CIS'" class="form-group form-group-sm text-right" ng-if="currentUser.permissions.indexOf('WRITE') !== -1">
   <button class="btn btn-info" ng-click="edit();"><i class="fa fa-pencil"></i> Edit</button>
 </div>

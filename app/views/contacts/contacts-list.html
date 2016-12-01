@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <tr dir-paginate="contact in contacts | filter:query | itemsPerPage: 9" current-page="currentPage" ng-click="go('{{contact.sourceId}}')" ng-class="{info: selected(contact.sourceId)}">
+    <tr dir-paginate="contact in contacts | filter:query | itemsPerPage: 9" current-page="currentPage" ng-click="go('{{contact.sourceId}}', '{{contact.source}}')" ng-class="{info: selected(contact.sourceId)}">
       <td data-th="Name">{{ contact.name }}</td>
       <td data-th="Relationship / Team">{{ contact.relationship }}</td>
       <td data-th="Source">{{ contact.source }}</td>
