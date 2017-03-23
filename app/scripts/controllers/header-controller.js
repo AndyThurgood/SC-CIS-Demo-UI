@@ -21,7 +21,6 @@ angular.module('ripple-ui')
       }
       else {
         $rootScope.currentUser = response.data;
-
         $scope.autoAdvancedSearch = false;
 
         browserNotification.getNotificationPermission();

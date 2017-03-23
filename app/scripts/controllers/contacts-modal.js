@@ -12,12 +12,10 @@ angular.module('ripple-ui')
     $scope.modal = modal;
 
     if (modal.title === 'Create Contact') {
-      $scope.contact.dateSubmitted = new Date().toISOString().slice(0, 10);
-      $scope.contact.relationshipCode = 'at0039';
-      $scope.contact.relationshipTerminology = 'local';
+      $scope.contact.dateCreated = new Date().toISOString().slice(0, 10);
     }
     else {
-      $scope.contact.dateSubmitted = new Date().toISOString().slice(0, 10);
+      $scope.contact.dateCreated = new Date().toISOString().slice(0, 10);
       // $scope.contact.dateSubmitted = new Date($scope.contact.dateSubmitted).toISOString().slice(0, 10);
     }
 

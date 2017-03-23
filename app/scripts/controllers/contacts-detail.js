@@ -9,7 +9,7 @@ angular.module('ripple-ui')
       $scope.patient = patient;
     });
 
-    Contact.get($stateParams.patientId, $stateParams.contactIndex).then(function (result) {
+    Contact.get($stateParams.patientId, $stateParams.contactIndex, $stateParams.source).then(function (result) {
       $scope.contact = result.data;
       usSpinnerService.stop('contactDetail-spinner');
     });

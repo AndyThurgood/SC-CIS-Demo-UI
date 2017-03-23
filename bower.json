@@ -1,6 +1,6 @@
 {
   "name": "ripple-ui",
-  "version": "0.8.2",
+  "version": "0.7.3",
   "dependencies": {
     "json3": "~3.3.1",
     "es5-shim": "~3.1.0",

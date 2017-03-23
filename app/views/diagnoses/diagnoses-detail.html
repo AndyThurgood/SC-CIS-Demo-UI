@@ -1,6 +1,6 @@
 <div class="transbox">
   <div class="innerTransbox">
-    <h3><strong>Problem and Diagnosis</strong></h3>
+    <h3><strong>Problem / Diagnosis</strong></h3>
 
     <div class="form-horizontal text-left">
 
@@ -56,23 +56,23 @@
         </div>
       </div>
 
-    <div class="form-horizontal text-left">
-      <div class="form-group form-group-sm">
-        <label class="control-label col-md-3">Author:</label>
-        <div class="col-md-9">
-          <div class="form-control-static">{{ diagnosis.author }}</div>
+      <div class="form-horizontal text-left">
+        <div class="form-group form-group-sm">
+          <label class="control-label col-md-3">Author:</label>
+          <div class="col-md-9">
+            <div class="form-control-static">{{ diagnosis.author }}</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="form-horizontal text-left">
-      <div class="form-group form-group-sm">
-        <label class="control-label col-md-3">Date Created:</label>
-        <div class="col-md-9">
-          <div class="form-control-static">{{ diagnosis.dateCreated | date:'y-MM-dd'}}</div>
+      <div class="form-horizontal text-left">
+        <div class="form-group form-group-sm">
+          <label class="control-label col-md-3">Date Created:</label>
+          <div class="col-md-9">
+            <div class="form-control-static">{{ diagnosis.dateCreated | date:'y-MM-dd'}}</div>
+          </div>
         </div>
       </div>
-    </div>
 
       <div class="form-group form-group-sm">
         <label class="control-label col-md-3">Source:</label>
@@ -87,6 +87,6 @@
     </div>
   </div>
 </div>
-<div ng-if="diagnosis.source !== 'vista'" class="form-group form-group-sm text-right" ng-if="currentUser.permissions.indexOf('WRITE') !== -1">
+<div ng-if="diagnosis.source !== 'vista' && diagnosis.source !== 'SC-CIS'" class="form-group form-group-sm text-right" ng-if="currentUser.permissions.indexOf('WRITE') !== -1">
   <button class="btn btn-info" ng-click="edit();"><i class="fa fa-pencil"></i> Edit</button>
 </div>
